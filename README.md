@@ -23,3 +23,5 @@ As all other C projects at the 42 school, the code has to written in accordance 
 
 ## RESULT
 My own usable printf function.
+
+<img src="https://github.com/42elenz/printf/blob/main/printf_evl.png" width=80%>
