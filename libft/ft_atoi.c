@@ -6,11 +6,11 @@
 /*   By: elenz <elenz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 10:59:15 by elenz             #+#    #+#             */
-/*   Updated: 2021/07/19 18:59:01 by elenz            ###   ########.fr       */
+/*   Updated: 2021/07/21 10:50:24 by elenz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* #include "libft.h" */
+#include "libft.h" 
 
 int	ft_atoi(const char *nptr)
 {
@@ -40,4 +40,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (vorz * result);
 }
-

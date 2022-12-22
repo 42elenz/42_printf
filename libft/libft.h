@@ -6,7 +6,7 @@
 /*   By: elenz <elenz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 15:24:56 by elenz             #+#    #+#             */
-/*   Updated: 2021/07/16 14:56:19 by elenz            ###   ########.fr       */
+/*   Updated: 2021/07/25 14:47:12 by elenz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	*ft_strchr(const char *s, int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 void	*ft_calloc(size_t count, size_t size);
-char	*ft_strnstr (const char *haystack, const char *needle, size_t len);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strdup(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
@@ -66,5 +66,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+char	*ft_strrev(char *s);
+char	*ft_utoa(unsigned int n);
 
 #endif

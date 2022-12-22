@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elenz <elenz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/06 11:42:57 by elenz             #+#    #+#             */
-/*   Updated: 2021/07/18 11:13:44 by elenz            ###   ########.fr       */
+/*   Created: 2021/07/24 11:35:17 by elenz             #+#    #+#             */
+/*   Updated: 2021/07/24 12:05:03 by elenz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strrev(char *s)
 {
-	unsigned char	*z;
-	unsigned int	i;
+	size_t		i;
+	size_t		len;
+	char		temp;
 
-	z = (unsigned char *)s;
 	i = 0;
-	if (n == 0)
-		return (0);
-	while (i < n)
+	len = ft_strlen(s);
+	len -= 1;
+	while (i < ((len + 1) / 2))
 	{
-		if (z[i] == (unsigned char)c)
-			return (z + i);
+		temp = s[i];
+		s[i] = s[len - i];
+		s[len - i] = temp;
 		i++;
 	}
-	return (0);
+	return (s);
 }

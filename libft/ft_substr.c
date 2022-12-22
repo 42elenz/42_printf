@@ -6,7 +6,7 @@
 /*   By: elenz <elenz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 15:27:41 by elenz             #+#    #+#             */
-/*   Updated: 2021/07/19 19:04:39 by elenz            ###   ########.fr       */
+/*   Updated: 2021/07/24 15:39:39 by elenz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	ft_strlcpy(string, &s[start], len + 1);
 	return (string);
-}
-
-int main()
-{
-	char *s = "Hallo";
-	ft_substr(s, 2, 3);
 }

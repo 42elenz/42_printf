@@ -1,79 +1,48 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: elenz <elenz@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/07/06 14:02:35 by elenz             #+#    #+#              #
-#    Updated: 2021/07/16 15:02:46 by elenz            ###   ########.fr        #
+#    Created: 2021/07/21 10:04:01 by elenz             #+#    #+#              #
+#    Updated: 2021/07/25 15:09:48 by elenz            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME = libftprintf.a
 CFLAGS = -Wall -Wextra -Werror
 CC = gcc
 
-SOURCE = ft_bzero.c \
-ft_atoi.c\
-ft_calloc.c\
-ft_isalnum.c\
-ft_isalpha.c\
-ft_isascii.c\
-ft_isdigit.c\
-ft_isprint.c\
-ft_itoa.c\
-ft_memchr.c\
-ft_memcmp.c\
-ft_memcpy.c \
-ft_memmove.c \
-ft_memset.c\
-ft_putchar_fd.c\
-ft_putendl_fd.c\
-ft_putnbr_fd.c\
-ft_putstr_fd.c\
-ft_split.c\
-ft_strchr.c\
-ft_strdup.c\
-ft_striteri.c\
-ft_strjoin.c\
-ft_strlcat.c\
-ft_strlcpy.c\
-ft_strlen.c\
-ft_strmapi.c\
-ft_strncmp.c\
-ft_strnstr.c\
-ft_strrchr.c\
-ft_strtrim.c\
-ft_substr.c\
-ft_tolower.c\
-ft_toupper.c\
+SOURCE = ft_dectohex.c\
+ft_evaluate.c\
+ft_hexnbr.c\
+ft_pointer.c\
+ft_pputchar.c\
+ft_pputnbr.c\
+ft_pputstr.c\
+ft_unpputnbr.c\
+ft_printf.c\
 
+LIBPATH = libft/
 
-SOURCEBONUS = ft_lstadd_back.c\
-ft_lstadd_front.c\
-ft_lstclear.c\
-ft_lstdelone.c\
-ft_lstiter.c\
-ft_lstlast.c\
-ft_lstmap.c\
-ft_lstnew.c\
-ft_lstsize.c\
+MAKE = make
 
-all: $(NAME) bonus
+all: $(NAME) 
 
-$(NAME): 
+$(NAME): libftmake
 	$(CC) $(CFLAGS) -c $(SOURCE)
-	ar -rcs $(NAME) $(SOURCE:.c=.o)
+	ar -rcs $(NAME) $(SOURCE:.c=.o) $(LIBPATH)*.o
+
+libftmake:
+	${MAKE} libft.a -C ${LIBPATH}
 
 clean:
-	rm -f *.o 
+	rm -f *.o
+	rm -f ${LIBPATH}*.o
 
 fclean: clean
 	rm -f $(NAME)
+	rm -f $(LIBPATH)libft.a
 
 re: fclean all
-
-bonus:
-	$(CC) $(CFLAGS) -c $(SOURCEBONUS)
-	ar -rcs $(NAME) $(SOURCEBONUS:.c=.o)

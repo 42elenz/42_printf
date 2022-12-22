@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_utoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elenz <elenz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/11 16:53:14 by elenz             #+#    #+#             */
-/*   Updated: 2021/07/19 18:13:33 by elenz            ###   ########.fr       */
+/*   Created: 2021/07/24 19:08:42 by elenz             #+#    #+#             */
+/*   Updated: 2021/07/24 19:13:09 by elenz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*strinigfy(long n, int l, char *ptr)
+static char	*strinigfy(unsigned int n, int l, char *ptr)
 {
 	int		neg;
 
@@ -36,7 +36,7 @@ static char	*strinigfy(long n, int l, char *ptr)
 	return (ptr);
 }
 
-static int	lengthnbr(long n)
+static int	lengthnbr(unsigned int n)
 {
 	int	counter;
 
@@ -54,25 +54,17 @@ static int	lengthnbr(long n)
 	return (counter);
 }
 
-char	*ft_itoa(int n)
+char	*ft_utoa(unsigned int n)
 {
-	char	*number;
-	int		len;
-	long	m;
+	char			*number;
+	int				len;
 
-	m = n;
 	if (n == 0)
 		return (ft_strdup("0"));
-	len = lengthnbr(m);
+	len = lengthnbr(n);
 	number = (char *)malloc ((len + 1) * sizeof(char));
 	if (number == NULL)
 		return (NULL);
-	number = strinigfy(m, len, number);
+	number = strinigfy(n, len, number);
 	return (number);
-}
-
-int main()
-{
-	ft_itoa(0);
-	return 0;
 }
