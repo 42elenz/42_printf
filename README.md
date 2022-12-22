@@ -22,14 +22,14 @@ As all other C projects at the 42 school, the code has to written in accordance 
 - only predefined functions allowed for this project are: write, malloc, free, va_start, va_arg, va_copy, va_end.
 
 ## TEST IN YOUR TERMINAL
-1.
-'''make'''
+1. Compile the libraries
+```make```
 
-2.
-'''gcc main.c libftprintf.a'''
+2. Compile the main with the library
+```gcc main.c libftprintf.a```
 
-3.
-'''./a.out'''
+3. Start the programm
+```./a.out``` 
 
 ## RESULT
 My own usable printf function.
